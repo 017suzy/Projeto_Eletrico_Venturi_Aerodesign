@@ -1,0 +1,9 @@
+cycler==0.10.0
+kiwisolver==1.2.0
+matplotlib
+numpy
+PyLTSpice==1.0.post4
+pyparsing==2.4.7
+python-dateutil==2.8.1
+scipy
+six==1.14.0
