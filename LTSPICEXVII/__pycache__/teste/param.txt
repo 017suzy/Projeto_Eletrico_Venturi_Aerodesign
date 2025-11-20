@@ -1,0 +1,4 @@
+.param C 1.000000E-04
+.param L 2.000000E-01
+.param R_cabo 4.460028E-02
+
