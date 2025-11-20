@@ -1,0 +1,61 @@
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Integração LTSpice e Python}
+\author{Relatório Técnico}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Integração LTSpice e Python}
+
+\subsection*{Observações Importantes}
+
+Foram utilizadas as seguintes fontes como referência para a realização desta tarefa:
+
+\begin{itemize}
+    \item \href{https://www.youtube.com/watch?v=BIkMCZUO-Kc}{\texttt{https://www.youtube.com/watch?v=BIkMCZUO-Kc}} \\
+    (utilizado para seguir corretamente cada passo e verificar os resultados esperados);
+
+    \item \href{https://acidbourbon.wordpress.com/2019/11/26/seamless-integration-of-ltspice-in-python-numpy-signal-processing/}{\texttt{https://acidbourbon.wordpress.com/2019/11/26/seamless-integration-of-ltspice-in-python-numpy-signal-processing/}} \\
+    (artigo contendo todos os arquivos-fonte utilizados na integração).
+\end{itemize}
+
+É necessário colocar todos os arquivos baixados do artigo em um único 
+diretório (ou seja, na mesma pasta), para que os códigos executem corretamente.
+
+Além disso, é muito importante \textbf{não modificar o arquivo Python \texttt{apply\_ltspice\_filter.py}}, pois ele é o 
+responsável por realizar a ligação entre o \textbf{LTSpice XVII} e a linguagem Python. 
+
+\paragraph{}
+Observação: nesta integração utilizou-se o \textbf{LTSpice XVII}, e não a versão comum do LTSpice.
+
+\paragraph{}
+Outro ponto essencial é o arquivo \texttt{.asc}, que deve ter o mesmo nome registrado tanto 
+no \texttt{apply\_ltspice\_filter.py} quanto no \texttt{filter\_demo.py}, para que todo o conjunto 
+de códigos funcione corretamente.
+
+\subsection*{Descrição da Tarefa}
+
+A tarefa consiste na leitura de dados diretamente do código Python (por exemplo, características do cabo) para o cálculo 
+da \textbf{resistência total do cabo}. 
+
+Em seguida, o valor calculado é enviado ao \textbf{LTSpice XVII} como o parâmetro \texttt{R\_cabo}, que é atribuído ao resistor 
+de mesmo nome dentro do circuito. Dessa forma, o LTSpice configura automaticamente a resistência 
+desse componente com base no valor calculado e mede a tensão final após essa resistência, 
+correspondendo à tensão que chega ao servo.
+
+\paragraph{}
+O arquivo \texttt{filter\_circuit.asc} foi modificado ao final para se ajustar ao 
+código desenvolvido para esta tarefa, garantindo compatibilidade completa entre a simulação no 
+LTSpice e o processamento em Python.
+
+\end{document}
